@@ -1,0 +1,20 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %h3.side-header__box__user-name
+        = current_user.name
+      %ul.side-header__box__menu      
+        %li.side-header__box__edit-user 
+          = link_to new_group_path do
+            = icon('fas', 'pen-square', class: 'icon')
+        %li.side-header__box__new-groups
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class: 'icon')
+  .groups
+    - current_user.groups.each do |group|
+      .group
+        = link_to "#" do
+          .group__name
+            test
+          .group__message
+            まだメッセージがありません
