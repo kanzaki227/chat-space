@@ -9,9 +9,9 @@ class Group < ApplicationRecord
     if (last_message = messages.last).present?
       if last_message.content?
         last_message.content
-       else
-         '画像が投稿されています'
-       end
+      else
+        '画像が投稿されています'
+      end
     else
       'まだメッセージはありません。'
     end
