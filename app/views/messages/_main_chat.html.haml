@@ -1,11 +1,20 @@
 .chat-main
   .main-header
+    .main-header__left-box
+      .main-header__left-box__current-group
+    .main-header__edit-btn
+      Edit
+
   .messages
+    = render @messages
   .form
-    %form.new_messages
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          .image
+            = icon('fas', 'image', class: 'icon')
+          .file
+            = f.file_field :image, class: 'hidden'
+      .submit
+        = f.submit 'Send', class: 'form__submit'
