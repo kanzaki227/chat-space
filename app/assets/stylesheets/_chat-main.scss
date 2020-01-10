@@ -1,50 +1,51 @@
 .chat-main{
-  height: 100vh;
   width: calc(100vw - 300px);
+  float: left;
   .main-header{
     height: 100px;
     padding: 0 40px;
     display: flex;
     justify-content: space-between;
     border-bottom: solid 1px #eee;
-    overflow: scroll;
     &__left-box{
       margin-top: 35px;
-      margin-bottom: 15px;
-      color: #333;
-      font-size: 20px;
-      position: relative;
       &__current-group{
-        position: absolute;
         font-size: 20px;
         color: #333;
         margin-bottom: 15px;
-        &__members {
-        color: #999;
+      }
+      &__member-list {
         display: flex;
         font-size: 12px;
-        margin-top: 15px;
-        &__edit-button{
-          height: 40px;
-          line-height: 40px;
-          padding: 0 20px;
-          margin-top: 30px;
-          border: solid 1px #38aef0;
-          position: absolute;
-          right: 40px;
-          }
-        }
-      }
-        }
+        color: #999999;
       }
     }
+    &__edit-btn{
+      display:block;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      margin-top: 30px;
+      border: solid 1px #38aef0;
+    }
+  }
 
+  a{
+    color: #38aef0;
+  }    
+  h2{
+    font-weight: normal;
+  }
+  ul{
+    list-style: none;
+  }
+  
+}
     
   .messages {
     background-color: #FAFAFA;
-    box-sizing: border-box;
-    padding: 46px 40px 0;
-    height: calc(100vh - 100px - 90px);
+    padding: 46px 40px;
+    height: calc(100vh - 190px);
     overflow: scroll;
     .message {
       .upper-message {
@@ -88,21 +89,21 @@
       border-style: none;
       padding: 0 40px 0 10px;
       }
-      .form__mask__image{
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        font-size: 1.3rem;
-        position: absolute;
-        top: 10;
-        right: 130px;
-        .file{
-          display: none;
-          }
-        }
+    .form__mask__image{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 1.3rem;
+      position: absolute;
+      top: 10;
+      right: 130px;
+      .file{
+        display: none;
       }
     }
+  }
+    
     .form__submit{
       width: 100px;
       height: 50px;
@@ -115,5 +116,4 @@
       top: 0;
       right: 0;
     }
-
-
+}
